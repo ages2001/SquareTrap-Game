@@ -21,16 +21,18 @@ Players must enter the position of their own piece that they wish to place on th
 <br>
 **Example Game Board with 4 Horizontal Lines and 5 Vertical Lines**
 
-  A   B   C   D   E     <br>
-1 W---W---W--- ---  1   <br>
-<br>  </br>  |<br>   </br>   |<br>   </br>   |<br>   </br>   |<br>   </br>|     <br>
-2 W---W---W---B---B 2   <br>
-  |   |   |   |   |     <br>
-3 W--- --- ---B---B 3   <br>
-  |   |   |   |   |     <br>
-4  ---W---B---B---  4   <br>
-  |   |   |   |   |     <br>
-  A   B   C   D   E     <br>
+|&nbsp;&nbsp;| A&nbsp;| B&nbsp;| C&nbsp;| D&nbsp;| E&nbsp;|
+|---|---|---|---|---|---|
+| 1 | W | W | W | &nbsp; | 1 |
+|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
+| 2 | W | W | W | B | B |
+|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
+| 3 | W | &nbsp;| &nbsp;| B | B |
+|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
+| 4 | &nbsp;| W | B | B | &nbsp;|
+|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
+|&nbsp;&nbsp;| A&nbsp;| B&nbsp;| C&nbsp;| D&nbsp;| E&nbsp;|
+
 <br>
 <br>
 <br>
