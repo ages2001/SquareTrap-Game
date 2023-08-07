@@ -19,6 +19,21 @@ Players must enter the position of their own piece that they wish to place on th
 <br>
 <br>
 <br>
+**Example Game Board with 4 Horizontal Lines and 5 Vertical Lines**
+
+  A   B   C   D   E
+1 W---W---W--- ---  1
+  |   |   |   |   |
+2 W---W---W---B---B 2
+  |   |   |   |   |
+3 W--- --- ---B---B 3
+  |   |   |   |   |
+4  ---W---B---B---  4
+  |   |   |   |   |
+  A   B   C   D   E
+<br>
+<br>
+<br>
 **Playing the Game**
 
 To play the game, you just need to download the zip file from Releases and run the exe file inside.
