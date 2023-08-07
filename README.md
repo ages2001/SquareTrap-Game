@@ -8,21 +8,21 @@ After all the pieces have been placed, the players count the number of squares t
 The player whose turn it is to move then tries to form a square by moving one of his/her own pieces. The empty piece can be moved horizontally or vertically as many times as desired, but in no case can the pieces be jumped over. As soon as a new square is created, a selected opponent's piece is removed. The player who reduces the number of opponent's pieces to 3, wins the game.
 
 For an example game, see: https://youtu.be/4A1vGGDkAIg?t=178
-<br/>
-
-<br/>
+<br>
+<br>
+<br>
 **Setting the Game**
 
 The playing field consists of at least 3 and at most 7 horizontal lines and 1 more vertical line than the number of horizontal lines. At the start, players must choose the number of horizontal lines. 
 
 Players must enter the position of their own piece that they wish to place on the playing field or the position of an opponent's piece that they wish to move out of the game, adjacent to the number ([1-7]) and the letter ([A-H]) of the horizontal line on which the respective position is located (e.g. 2D). Similarly, players must enter the current position and the target position of their own piece they wish to move, with a space between the adjacent horizontal line number and vertical line letter of the current position and the adjacent horizontal line number and vertical line letter of the target position (e.g. 3C 1C).
-<br/>
-
-<br/>
+<br>
+<br>
+<br>
 **Playing the Game**
 
 To play the game, you just need to download the zip file from Releases and run the exe file inside.
-<br/>
-
-<br/>
+<br>
+<br>
+<br>
 **ENJOY THE GAME!**
