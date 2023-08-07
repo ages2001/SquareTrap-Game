@@ -23,7 +23,7 @@ Players must enter the position of their own piece that they wish to place on th
 
   A   B   C   D   E     <br>
 1 W---W---W--- ---  1   <br>
-  |   |   |   |   |     <br>
+<br>  </br>  |<br>   </br>   |<br>   </br>   |<br>   </br>   |<br>   </br>|     <br>
 2 W---W---W---B---B 2   <br>
   |   |   |   |   |     <br>
 3 W--- --- ---B---B 3   <br>
