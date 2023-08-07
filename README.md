@@ -15,7 +15,7 @@ The playing field consists of at least 3 and at most 7 horizontal lines and 1 mo
 
 Players must enter the position of their own piece that they wish to place on the playing field or the position of an opponent's piece that they wish to move out of the game, adjacent to the number ([1-7]) and the letter ([A-H]) of the horizontal line on which the respective position is located (e.g. 2D). Similarly, players must enter the current position and the target position of their own piece they wish to move, with a space between the adjacent horizontal line number and vertical line letter of the current position and the adjacent horizontal line number and vertical line letter of the target position (e.g. 3C 1C).
 
-**Example Game Board with 4 Horizontal Lines and 5 Vertical Lines**
+**Example Game Board with 4 Horizontal and 5 Vertical Lines**
 
 ![image](https://github.com/ages2001/SquareTrap-Game/assets/95752873/29ae26e5-ce43-471a-9e6d-dc6435f088df)
 
