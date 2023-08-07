@@ -9,9 +9,15 @@ The player whose turn it is to move then tries to form a square by moving one of
 
 For an example game, see: https://youtu.be/4A1vGGDkAIg?t=178
 
-
+ 
 **Setting the Game**
 
 The playing field consists of at least 3 and at most 7 horizontal lines and 1 more vertical line than the number of horizontal lines. At the start, players must choose the number of horizontal lines. 
 
 Players must enter the position of their own piece that they wish to place on the playing field or the position of an opponent's piece that they wish to move out of the game, adjacent to the number ([1-4]) and the letter ([A-E]) of the horizontal line on which the respective position is located (e.g. 2D). Similarly, players must enter the current position and the target position of their own piece they wish to move, with a space between the adjacent horizontal line number and vertical line letter of the current position and the adjacent horizontal line number and vertical line letter of the target position (e.g. 3C 1C).
+ 
+
+**Playing the Game**
+To play the game you just need to run the SquareTrap.exe file.
+
+**ENJOY THE GAME!**
