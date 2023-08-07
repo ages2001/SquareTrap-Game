@@ -21,17 +21,7 @@ Players must enter the position of their own piece that they wish to place on th
 <br>
 **Example Game Board with 4 Horizontal Lines and 5 Vertical Lines**
 
-|&nbsp;&nbsp;| A&nbsp;| B&nbsp;| C&nbsp;| D&nbsp;| E&nbsp;|
-|---|---|---|---|---|---|
-| 1 | W | W | W | &nbsp; | 1 |
-|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
-| 2 | W | W | W | B | B |
-|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
-| 3 | W | &nbsp;| &nbsp;| B | B |
-|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
-| 4 | &nbsp;| W | B | B | &nbsp;|
-|&nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;| &nbsp;|
-|&nbsp;&nbsp;| A&nbsp;| B&nbsp;| C&nbsp;| D&nbsp;| E&nbsp;|
+![image](https://github.com/ages2001/SquareTrap-Game/assets/95752873/29ae26e5-ce43-471a-9e6d-dc6435f088df)
 
 <br>
 <br>
