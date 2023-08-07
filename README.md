@@ -9,6 +9,7 @@ The player whose turn it is to move then tries to form a square by moving one of
 
 For an example game, see: https://youtu.be/4A1vGGDkAIg?t=178
 
+
 **Setting the Game**
 
 The playing field consists of at least 3 and at most 7 horizontal lines and 1 more vertical line than the number of horizontal lines. At the start, players must choose the number of horizontal lines. 
