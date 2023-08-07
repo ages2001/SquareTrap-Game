@@ -18,6 +18,7 @@ Players must enter the position of their own piece that they wish to place on th
  
 
 **Playing the Game**
-To play the game you just need to run the SquareTrap.exe file.
+
+To play the game, you just need to download the zip file from Releases and run the exe file inside. 
 
 **ENJOY THE GAME!**
