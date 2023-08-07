@@ -12,21 +12,37 @@ typedef struct gameBoard {
 } gameBoard;
 
 void createGameBoard(gameBoard *board, int row, int column);
+
 void clearGameBoard(gameBoard *board);
+
 void printGameBoard(gameBoard board);
+
 int isValidLocation(char *location, gameBoard board);
+
 int isBoardFull(gameBoard board);
+
 void placeStone(const char *location, char value, gameBoard *board);
+
 int countWhiteSquares(gameBoard *board);
+
 int countBlackSquares(gameBoard *board);
+
 int isWhiteRemoveStone(char *location, gameBoard board);
+
 int isBlackRemoveStone(char *location, gameBoard board);
+
 int squareCheck(const char *location, gameBoard board);
+
 void removeStone(const char *location, gameBoard *board);
+
 int isValidWhiteMove(char *location, gameBoard board);
+
 int isValidBlackMove(char *location, gameBoard board);
+
 int isJumpOverStone(const char *location, gameBoard board);
+
 int moveWhite(const char *location, gameBoard *board);
+
 int moveBlack(const char *location, gameBoard *board);
 
 int main() {
@@ -40,8 +56,7 @@ int main() {
         if (operation == 0) {
             printf("\nThanks for playing the game!\nExiting...\n");
             exit(0);
-        }
-        else if (operation != 1)
+        } else if (operation != 1)
             printf("Invalid operation!\n");
 
         else {
@@ -60,8 +75,8 @@ int main() {
             createGameBoard(&newGameBoard, row, column);
 
             while (!isBoardFull(newGameBoard)) {
-                char *whiteLocation = (char *) malloc (sizeof (char) * STR_LIMIT);
-                char *blackLocation = (char *) malloc (sizeof (char) * STR_LIMIT);
+                char *whiteLocation = (char *) malloc(sizeof(char) * STR_LIMIT);
+                char *blackLocation = (char *) malloc(sizeof(char) * STR_LIMIT);
 
                 printGameBoard(newGameBoard);
 
@@ -106,8 +121,8 @@ int main() {
                     whiteSquares++;
             }
 
-            char *whiteRemoveStone = (char *) malloc (sizeof (char) * STR_LIMIT);
-            char *blackRemoveStone = (char *) malloc (sizeof (char) * STR_LIMIT);
+            char *whiteRemoveStone = (char *) malloc(sizeof(char) * STR_LIMIT);
+            char *blackRemoveStone = (char *) malloc(sizeof(char) * STR_LIMIT);
 
             while (whiteSquares != 0) { // Player 1 (White) removing stones
                 printGameBoard(newGameBoard);
@@ -135,8 +150,8 @@ int main() {
                 whiteStones--;
             }
 
-            char *whiteMove = (char *) malloc (sizeof (char) * STR_LIMIT);
-            char *blackMove = (char *) malloc (sizeof (char) * STR_LIMIT);
+            char *whiteMove = (char *) malloc(sizeof(char) * STR_LIMIT);
+            char *blackMove = (char *) malloc(sizeof(char) * STR_LIMIT);
 
             while (whiteStones != 3 && blackStones != 3) {
                 do {
@@ -205,9 +220,9 @@ int main() {
 }
 
 void createGameBoard(gameBoard *board, int row, int column) {
-    char **table = (char **) malloc (sizeof (char *) * row);
+    char **table = (char **) malloc(sizeof(char *) * row);
     for (int i = 0; i < row; i++)
-        table[i] = (char *) malloc (sizeof (char) * column);
+        table[i] = (char *) malloc(sizeof(char) * column);
 
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++)
@@ -302,7 +317,7 @@ int isBoardFull(gameBoard board) {
 
 void placeStone(const char *location, char value, gameBoard *board) {
     int lineRow = location[0] - 49;
-    int lineColumn= location[1] - 65;
+    int lineColumn = location[1] - 65;
 
     board->table[lineRow][lineColumn] = value;
 }
@@ -314,7 +329,8 @@ int countWhiteSquares(gameBoard *board) {
             if (board->table[i][j] == board->table[i][j + 1] &&
                 board->table[i][j + 1] == board->table[i + 1][j + 1] &&
                 board->table[i + 1][j + 1] == board->table[i + 1][j] &&
-                board->table[i][j] == 'W') count++;
+                board->table[i][j] == 'W')
+                count++;
         }
     }
     return count;
@@ -327,7 +343,8 @@ int countBlackSquares(gameBoard *board) {
             if (board->table[i][j] == board->table[i][j + 1] &&
                 board->table[i][j + 1] == board->table[i + 1][j + 1] &&
                 board->table[i + 1][j + 1] == board->table[i + 1][j] &&
-                board->table[i][j] == 'B') count++;
+                board->table[i][j] == 'B')
+                count++;
         }
     }
     return count;
@@ -417,86 +434,78 @@ int squareCheck(const char *location, gameBoard board) {
 
     if (lineRow < 1 && lineColumn < 1) {
         if (board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn + 1] &&
-             board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
-             board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
-                return 1;
-    }
-    else if (lineRow < 1 && lineColumn >= board.column - 1) {
+            board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
+            board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
+            return 1;
+    } else if (lineRow < 1 && lineColumn >= board.column - 1) {
         if (board.table[lineRow][lineColumn] == board.table[lineRow + 1][lineColumn] &&
             board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
             board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1])
-                return 1;
-    }
-    else if (lineRow >= board.row - 1 && lineColumn >= board.column - 1) {
+            return 1;
+    } else if (lineRow >= board.row - 1 && lineColumn >= board.column - 1) {
         if (board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
             board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
             board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])
-                return 1;
-    }
-    else if (lineRow >= board.row - 1 && lineColumn < 1) {
+            return 1;
+    } else if (lineRow >= board.row - 1 && lineColumn < 1) {
         if (board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
             board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
             board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])
-                return 1;
-    }
-    else if (lineRow < 1) {
-        if  ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn + 1] &&
-              board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
-              board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
+            return 1;
+    } else if (lineRow < 1) {
+        if ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn + 1] &&
+             board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
+             board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
             ||
             ((board.table[lineRow][lineColumn] == board.table[lineRow + 1][lineColumn] &&
               board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
               board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1])))
-                return 1;
-    }
-    else if (lineRow >= board.row - 1) {
-        if  ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
-              board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
-              board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])
+            return 1;
+    } else if (lineRow >= board.row - 1) {
+        if ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
+             board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
+             board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])
             ||
             ((board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
               board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
               board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])))
-                return 1;
-    }
-    else if (lineColumn < 1) {
+            return 1;
+    } else if (lineColumn < 1) {
         if ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn + 1] &&
-            board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
-            board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
-           ||
-           ((board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
-            board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
-            board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])))
-                return 1;
-    }
-    else if (lineColumn >= board.column - 1) {
+             board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
+             board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
+            ||
+            ((board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
+              board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
+              board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])))
+            return 1;
+    } else if (lineColumn >= board.column - 1) {
         if ((board.table[lineRow][lineColumn] == board.table[lineRow + 1][lineColumn] &&
-            board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
-            board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1])
-           ||
-           ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
-             board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
-             board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])))
-                return 1;
-    }
-    else {
+             board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
+             board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1])
+            ||
+            ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
+              board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
+              board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])))
+            return 1;
+    } else {
         if ((board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn + 1] &&
-            board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
-            board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
-           ||
-           (board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
-            board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
-            board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])
-           ||
-           (board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
-            board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
-            board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])
-           ||
-           (board.table[lineRow][lineColumn] == board.table[lineRow + 1][lineColumn] &&
-            board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
-            board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1]))
-                return 1;
-        }
+             board.table[lineRow][lineColumn + 1] == board.table[lineRow + 1][lineColumn + 1] &&
+             board.table[lineRow + 1][lineColumn + 1] && board.table[lineRow + 1][lineColumn])
+            ||
+            (board.table[lineRow][lineColumn] == board.table[lineRow - 1][lineColumn] &&
+             board.table[lineRow - 1][lineColumn] == board.table[lineRow - 1][lineColumn + 1] &&
+             board.table[lineRow - 1][lineColumn + 1] == board.table[lineRow][lineColumn + 1])
+            ||
+            (board.table[lineRow][lineColumn] == board.table[lineRow][lineColumn - 1] &&
+             board.table[lineRow][lineColumn - 1] == board.table[lineRow - 1][lineColumn - 1] &&
+             board.table[lineRow - 1][lineColumn - 1] == board.table[lineRow - 1][lineColumn])
+            ||
+            (board.table[lineRow][lineColumn] == board.table[lineRow + 1][lineColumn] &&
+             board.table[lineRow + 1][lineColumn] == board.table[lineRow + 1][lineColumn - 1] &&
+             board.table[lineRow + 1][lineColumn - 1] == board.table[lineRow][lineColumn - 1]))
+            return 1;
+    }
 
     return 0;
 }
@@ -566,7 +575,7 @@ int isValidWhiteMove(char *location, gameBoard board) {
         return 0;
     }
 
-    char *nextLocation = (char*) malloc (sizeof(char) * 3);
+    char *nextLocation = (char *) malloc(sizeof(char) * 3);
     nextLocation[3] = location[3];
     nextLocation[4] = location[4];
 
@@ -671,15 +680,13 @@ int isJumpOverStone(const char *location, gameBoard board) {
                 if (board.table[row][column - i] != ' ')
                     return 1;
             }
-        }
-        else {
+        } else {
             for (int i = 1; i < moveCount; i++) {
                 if (board.table[row][column + i] != ' ')
                     return 1;
             }
         }
-    }
-    else {
+    } else {
         moveCount = location[3] - location[0];
 
         if (moveCount < 0) {
@@ -687,8 +694,7 @@ int isJumpOverStone(const char *location, gameBoard board) {
                 if (board.table[row - i][column] != ' ')
                     return 1;
             }
-        }
-        else {
+        } else {
             for (int i = 1; i < moveCount; i++) {
                 if (board.table[row + i][column] != ' ')
                     return 1;
@@ -700,8 +706,8 @@ int isJumpOverStone(const char *location, gameBoard board) {
 }
 
 int moveWhite(const char *location, gameBoard *board) {
-    char *currentLocation = (char*) malloc (sizeof(char) * 3);
-    char *nextLocation = (char*) malloc (sizeof(char) * 3);
+    char *currentLocation = (char *) malloc(sizeof(char) * 3);
+    char *nextLocation = (char *) malloc(sizeof(char) * 3);
 
     currentLocation[0] = location[0];
     currentLocation[1] = location[1];
@@ -721,8 +727,8 @@ int moveWhite(const char *location, gameBoard *board) {
 }
 
 int moveBlack(const char *location, gameBoard *board) {
-    char *currentLocation = (char*) malloc (sizeof(char) * 3);
-    char *nextLocation = (char*) malloc (sizeof(char) * 3);
+    char *currentLocation = (char *) malloc(sizeof(char) * 3);
+    char *nextLocation = (char *) malloc(sizeof(char) * 3);
 
     currentLocation[0] = location[0];
     currentLocation[1] = location[1];
